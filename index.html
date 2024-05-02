@@ -14,7 +14,7 @@
             <legend>Dados pessoais</legend>
             <div>
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" autofocus required>
+                <input type="text" name="nome" id="nome" minlength="2" maxlength="50" autofocus required>
             </div>
             <div>
                 <label for="email">E-mail:</label>
@@ -22,7 +22,7 @@
             </div>
             <div>
                 <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}\-\d{2}" required>
+                <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
                 <small>Por favor preencha no formato: 000.000.000-00</small>
             </div>
             <div>
@@ -42,13 +42,23 @@
                 <input type="text" name="sexo" id="sexo">
             </div>
             <div>
-                <label for="estadoCivil">Estado civil:</label>
-                <select name="estadoCivil" id="estadoCivil">
-                    <option value="solteiro">Solteiro(a)</option>
-                    <option value="casado">Casado(a)</option>
-                    <option value="divorciado">Divorciado(a)</option>
-                    <option value="viuvo">Viúvo(a)</option>
-                </select>
+                <label>Estado civil:</label>
+                <div>
+                    <input type="radio" name="estadoCivil" id="solteiro">
+                    <label for="solteiro">Solteiro(a)</label>
+
+                    <input type="radio" name="estadoCivil" id="casado">
+                    <label for="casado">Casado(a)</label>
+
+                    <input type="radio" name="estadoCivil" id="divorciado">
+                    <label for="divorciado">Divorciado(a)</label>
+
+                    <input type="radio" name="estadoCivil" id="viuvo">
+                    <label for="viuvo">Viúvo(a)</label>
+                </div>
+                <div>
+                    <input type="hidden" name="campoOculto" id="campoOculto">
+                </div>
             </div>
         </fieldset>
         <fieldset>
@@ -58,7 +68,7 @@
                 <input type="text" name="cep" id="cep" required>
             </div>
             <div>
-                <label for="tipoDeLogradouro" >Tipo de logradouro:</label>
+                <label for="tipoDeLogradouro">Tipo de logradouro:</label>
                 <select name="tipoDeLogradouro" id="tipoDeLogradouro" required>
                     <option value="" disabled selected>Tipo de logradouro</option>
                     <option value="rua">Rua</option>
@@ -109,7 +119,7 @@
                     <label for="roupas">Roupas</label>
                 </div>
             </fieldset>
-        
+
             <div>
                 <label for="informacoesAdicionais">Informações adicionais:</label>
                 <textarea name="informacoesAdicionais" id="informacoesAdicionais" cols="30" rows="5"></textarea>
@@ -118,8 +128,8 @@
                 <label for="arquivo">Anexar arquivo</label>
                 <input type="file" name="arquivo" id="arquivo">
             </div>
-
         </fieldset>
+        <button type="button">Enviar formulário</button>
     </form>
 </body>
 
